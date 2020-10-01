@@ -1,6 +1,6 @@
 import java.io.*;
+import java.util.Collections;
 import java.util.Scanner;
-//import java.util.Collections;
 
 public class DictionaryManagement {
     //Dictionary a = new Dictionary();
@@ -64,5 +64,20 @@ public class DictionaryManagement {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void dictionaryLookup (Dictionary a) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Search word: ");
+
+        String searchWord = sc.nextLine();
+        int pos = Collections.binarySearch(a.arr, new Word (searchWord, null));
+
+        if (pos >= 0) {
+            System.out.println("Mean: " + a.arr.get(pos).getWord_explain());
+        } else {
+            System.out.println("The word is not exist in dictionary");
+        }
+        sc.close();
     }
 }

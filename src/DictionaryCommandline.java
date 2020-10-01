@@ -13,14 +13,21 @@ public class DictionaryCommandline {
 
     public static void dictionaryBasic(Dictionary a) {
         DictionaryManagement DM = new DictionaryManagement();
-        //DM.insertFromCommandline(a);
+        DM.insertFromCommandline(a);
+
+        showAllWords(a);
+    }
+
+    public static void dictionaryAdvanced(Dictionary a) {
+        DictionaryManagement DM = new DictionaryManagement();
         DM.insertFromFile(a);
         showAllWords(a);
+        DM.dictionaryLookup(a);
     }
 
     public static void main(String[] args) {
         Dictionary tmp = new Dictionary();
-        dictionaryBasic(tmp);
+        dictionaryAdvanced(tmp);
         /*String s = "hello";
         int tmp = s.indexOf('o');
         System.out.println(s.substring(0,tmp));*/
