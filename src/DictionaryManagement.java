@@ -66,9 +66,11 @@ public class DictionaryManagement {
         }
     }
 
-    public void dictionaryLookup (Dictionary a) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Search word: ");
+    Scanner sc = new Scanner(System.in);
+
+    public void dictionaryLookup (Dictionary a, Scanner sc) {
+        //Scanner sc = new Scanner(System.in);
+        System.out.print("Lookup word: ");
 
         String searchWord = sc.nextLine();
         int pos = Collections.binarySearch(a.arr, new Word (searchWord, null));
@@ -78,6 +80,20 @@ public class DictionaryManagement {
         } else {
             System.out.println("The word is not exist in dictionary");
         }
-        sc.close();
+        //sc.close();
+    }
+
+    public void dictionarySearcher (Dictionary a, Scanner sc) {
+        //Scanner sc = new Scanner(System.in);
+        System.out.print("Searcher word: ");
+        //ystem.out.println(sc.next());
+        //System.out.println(sc.nextLine());
+        String searchWord = sc.nextLine();
+        for (int i = 0; i < a.arr.size(); i++) {
+            String tempString = a.getWord(i).getWord_target();
+            if (tempString.contains(searchWord) == true)
+                System.out.println(tempString);
+        }
+        //sc.close();
     }
 }

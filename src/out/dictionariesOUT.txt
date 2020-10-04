@@ -1,0 +1,6 @@
+No	| English	| Vietnamese
+1	| Flower	| Hoa
+2	| Gun	| Sung
+3	| Hello	| Xin Chao
+4	| Rose	| Hoa Hong
+5	| Sorry	| Xin Loi
