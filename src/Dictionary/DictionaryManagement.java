@@ -1,10 +1,10 @@
+package Dictionary;
+
 import java.io.*;
 import java.util.Collections;
 import java.util.Scanner;
 
 public class DictionaryManagement {
-    //Dictionary a = new Dictionary();
-
     public static void insertFromCommandline(Dictionary a) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -20,25 +20,7 @@ public class DictionaryManagement {
         sc.close();
     }
 
-    /*public static void insertFromFile (Dictionary a) {
-        try {
-            FileReader fr =  new FileReader("D:\\Dictionary\\src\\dictionary\\dictionaries.txt");
-            BufferedReader br = new BufferedReader(fr);
-            String line;
-
-            while ((line = br.readLine()) != null) {
-                int tab = line.indexOf('\t');
-                String word_target = line.substring(0, tab);
-                String word_explain = line.substring(tab + 1);
-                a.addWord(new Word(word_target, word_explain));
-            }
-            br.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }*/
-
-    private final static String FILE_URL = "D:\\DictionaryofCuong\\src\\dictionary\\dictionaries.txt";
+    private final static String FILE_URL = "D:\\HelloDictonary\\src\\Dictionary\\dictionary\\dictionaries.txt";
     public static void insertFromFile (Dictionary a) {
         try {
             File file = new File(FILE_URL);
@@ -49,10 +31,7 @@ public class DictionaryManagement {
 
             String line = "";
             while((line = reader.readLine()) != null) {
-                //String line = reader.readLine();
                 int tmp = line.indexOf('|');
-                /*String Word_target = "Hello" + tmp;
-                String Word_explain = "Xin chao" + tmp;*/
 
                 String Word_target = line.substring(0, tmp);
                 String Word_explain = line.substring(tmp + 1, line.length());
@@ -68,32 +47,38 @@ public class DictionaryManagement {
 
     Scanner sc = new Scanner(System.in);
 
-    public void dictionaryLookup (Dictionary a, Scanner sc) {
-        //Scanner sc = new Scanner(System.in);
-        System.out.print("Lookup word: ");
+    public void addWord (Dictionary a, String Word_target, String Word_explain) {
+        Word w = new Word(Word_target, Word_explain);
+        a.addWord(w);
+        a.sortDic();
+    }
 
-        String searchWord = sc.nextLine();
+    public String dictionaryLookup (Dictionary a, String searchWord) {
         int pos = Collections.binarySearch(a.arr, new Word (searchWord, null));
-
         if (pos >= 0) {
-            System.out.println("Mean: " + a.arr.get(pos).getWord_explain());
+            return a.arr.get(pos).getWord_explain();
         } else {
-            System.out.println("The word is not exist in dictionary");
+            String tmp = "The word is not exist in dictionary";
+            return tmp;
         }
-        //sc.close();
+    }
+
+    public boolean checkLookup (Dictionary a, String searchWord) {
+        int pos = Collections.binarySearch(a.arr, new Word (searchWord, null));
+        if (pos >= 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public void dictionarySearcher (Dictionary a, Scanner sc) {
-        //Scanner sc = new Scanner(System.in);
         System.out.print("Searcher word: ");
-        //ystem.out.println(sc.next());
-        //System.out.println(sc.nextLine());
         String searchWord = sc.nextLine();
         for (int i = 0; i < a.arr.size(); i++) {
             String tempString = a.getWord(i).getWord_target();
             if (tempString.contains(searchWord) == true)
                 System.out.println(tempString);
         }
-        //sc.close();
     }
 }

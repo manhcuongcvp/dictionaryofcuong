@@ -1,5 +1,0 @@
-Gun|Sung
-Flower|Hoa
-Rose|Hoa Hong
-Hello|Xin Chao
-Sorry|Xin Loi

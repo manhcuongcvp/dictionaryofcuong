@@ -1,3 +1,5 @@
+package Dictionary;
+
 import java.util.Scanner;
 import java.io.*;
 
@@ -18,11 +20,6 @@ public class DictionaryCommandline {
     private final static String FILE_URL = "D:\\DictionaryofCuong\\src\\out\\dictionariesOUT.txt";
 
     public static void dictionaryExportToFile(Dictionary a) throws IOException {
-        String[] data = {
-                "Hello Manh Cuong!",
-                "Good bye!"
-        };
-
         File file = new File(FILE_URL);
         OutputStream outputStream = new FileOutputStream(file);
         OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
@@ -51,7 +48,10 @@ public class DictionaryCommandline {
         dictionaryExportToFile(a);
         Scanner sc = new Scanner(System.in);
 
-        DM.dictionaryLookup(a, sc);
+        System.out.print("Look up: ");
+        String searchWord = sc.nextLine();
+        String resultWord = DM.dictionaryLookup(a, searchWord);
+        System.out.println(resultWord);
         DM.dictionarySearcher(a, sc);
     }
 

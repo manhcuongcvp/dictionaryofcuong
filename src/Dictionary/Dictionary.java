@@ -1,3 +1,5 @@
+package Dictionary;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -14,5 +16,8 @@ public class Dictionary {
 
     public void sortDic() {
         Collections.sort(arr);
+    }
+    public int getSize() {
+        return arr.size();
     }
 }
