@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerRemove">
+   <children>
+      <Label layoutX="87.0" layoutY="85.0" text="Nhập từ cần xóa:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="WordTarget" layoutX="51.0" layoutY="169.0" prefHeight="31.0" prefWidth="199.0" promptText="Nhập từ cần xóa" />
+      <Button layoutX="113.0" layoutY="272.0" mnemonicParsing="false" onAction="#Submit" text="Remove" />
+   </children>
+</AnchorPane>

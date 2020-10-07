@@ -1,6 +1,7 @@
 package Dictionary;
 
 import java.io.*;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Scanner;
 
@@ -51,6 +52,18 @@ public class DictionaryManagement {
         Word w = new Word(Word_target, Word_explain);
         a.addWord(w);
         a.sortDic();
+    }
+
+    public void removeWord (Dictionary a, String Word_target) {
+        int pos = -1;
+        pos = Collections.binarySearch(a.arr, new Word (Word_target, null));
+        a.removeMord(pos);
+    }
+
+    public void modifyWord (Dictionary a, String Word_target, String Word_explain) {
+        int pos = -1;
+        pos = Collections.binarySearch(a.arr, new Word (Word_target, null));
+        a.modifyWord(pos, Word_explain);
     }
 
     public String dictionaryLookup (Dictionary a, String searchWord) {

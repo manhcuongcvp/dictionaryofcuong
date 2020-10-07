@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 
-public class ControllerAdd {
+public class ControllerModify {
     @FXML
     private TextField WordTarget;
     @FXML
@@ -21,11 +21,11 @@ public class ControllerAdd {
 
     public void run() {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("ControllerAdd.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("ControllerModify.fxml"));
             Scene scene = new Scene(root);
             Stage window = new Stage();
             window.initModality(Modality.APPLICATION_MODAL);
-            window.setTitle("Thêm từ mới");
+            window.setTitle("Sửa từ");
             window.setScene(scene);
             window.showAndWait();
         } catch (IOException e) {
@@ -36,15 +36,6 @@ public class ControllerAdd {
     public void Submit (ActionEvent event) {
         String wordTarget = WordTarget.getText();
         String wordExplain = WordExplain.getText();
-
-        if (Controller.DicM.checkLookup(Controller.Dic, wordTarget)) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo");
-            alert.setHeaderText(null);
-            alert.setContentText("Từ bạn nhập đã có trong từ điển!");
-            alert.showAndWait();
-            return;
-        }
 
         if (wordTarget.length() == 0) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -64,11 +55,20 @@ public class ControllerAdd {
             return;
         }
 
-        Controller.DicM.addWord(Controller.Dic, wordTarget, wordExplain);
+        if (Controller.DicM.checkLookup(Controller.Dic, wordTarget) == false) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Cảnh báo");
+            alert.setHeaderText(null);
+            alert.setContentText("Từ bạn nhập chưa có trong từ điển!");
+            alert.showAndWait();
+            return;
+        }
+
+        Controller.DicM.modifyWord(Controller.Dic, wordTarget, wordExplain);
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Cảnh báo");
+        alert.setTitle("Thông báo");
         alert.setHeaderText(null);
-        alert.setContentText("Thêm từ thành công!");
+        alert.setContentText("Sửa từ thành công!");
         alert.showAndWait();
     }
 

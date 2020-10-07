@@ -31,5 +31,7 @@
             <Font size="17.0" />
          </font></TextArea>
       <Button layoutX="339.0" layoutY="356.0" mnemonicParsing="false" onAction="#openAddWindow" text="Add" />
+      <Button layoutX="339.0" layoutY="398.0" mnemonicParsing="false" onAction="#openRemoveWindow" text="Remove" />
+      <Button layoutX="339.0" layoutY="440.0" mnemonicParsing="false" onAction="#openModifyWindow" text="Modify" />
    </children>
 </AnchorPane>

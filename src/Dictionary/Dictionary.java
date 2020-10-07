@@ -9,6 +9,12 @@ public class Dictionary {
     public void addWord(Word w) {
         arr.add(w);
     }
+    public void removeMord(int pos) {
+        arr.remove(arr.get(pos));
+    }
+    public void modifyWord(int pos, String wordExplain) {
+        arr.get(pos).setWord_explain(wordExplain);
+    }
 
     public Word getWord(int i) {
         return arr.get(i);

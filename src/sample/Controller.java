@@ -30,6 +30,8 @@ public class Controller extends Application implements Initializable {
     private TextArea SearcherZone;
 
     private ControllerAdd controllerAdd = new ControllerAdd();
+    private ControllerRemove controllerRemove = new ControllerRemove();
+    private ControllerModify controllerModify = new ControllerModify();
 
     public static Dictionary Dic = new Dictionary();
     public static DictionaryManagement DicM = new DictionaryManagement();
@@ -77,6 +79,14 @@ public class Controller extends Application implements Initializable {
 
     public void openAddWindow() {
         controllerAdd.run();
+    }
+
+    public void openRemoveWindow() {
+        controllerRemove.run();
+    }
+
+    public void openModifyWindow() {
+        controllerModify.run();
     }
 
     @Override
