@@ -1,9 +1,12 @@
 package Dictionary;
 
+import com.sun.speech.freetts.Voice;
+
 import java.io.*;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Scanner;
+
 
 public class DictionaryManagement {
     public static void insertFromCommandline(Dictionary a) {
@@ -21,7 +24,7 @@ public class DictionaryManagement {
         sc.close();
     }
 
-    private final static String FILE_URL = "D:\\HelloDictonary\\src\\Dictionary\\dictionary\\dictionaries.txt";
+    private final static String FILE_URL = "D:\\HelloDictionary\\src\\Dictionary\\dictionary\\dictionaries.txt";
     public static void insertFromFile (Dictionary a) {
         try {
             File file = new File(FILE_URL);
@@ -44,6 +47,18 @@ public class DictionaryManagement {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void dictionaryExportToFile(Dictionary a) throws IOException {
+        File file = new File(FILE_URL);
+        OutputStream outputStream = new FileOutputStream(file);
+        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
+
+        for (int i = 0; i < a.arr.size(); i++) {
+            outputStreamWriter.write(a.getWord(i).getWord_target() + "|" + a.getWord(i).getWord_explain() + "\n");
+        }
+
+        outputStreamWriter.flush();
     }
 
     Scanner sc = new Scanner(System.in);

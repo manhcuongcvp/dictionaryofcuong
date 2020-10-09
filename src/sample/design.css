@@ -1,0 +1,33 @@
+#WordTarget {
+    -fx-border-radius: 100px;
+    -fx-background-radius: 100px;
+}
+
+#addButton {
+    -fx-background-image:url('./Image/AddIcon.png');
+    -fx-background-position: center;
+    -fx-background-size: cover;
+    -fx-border-radius: 100%;
+    -fx-background-radius: 100%;
+}
+#deleteButton {
+    -fx-border-radius: 100%;
+    -fx-background-radius: 100%;
+    -fx-background-image:url('./Image/DeleteIcon.png');
+    -fx-background-position: center;
+    -fx-background-size: cover;
+}
+#modifyButton {
+    -fx-border-radius: 100%;
+    -fx-background-radius: 100%;
+    -fx-background-image:url('./Image/ModifyIcon.png');
+    -fx-background-position: center;
+    -fx-background-size: cover;
+}
+#voiceButton {
+    -fx-border-radius: 100%;
+    -fx-background-radius: 100%;
+    -fx-background-image:url('./Image/VoiceIcon.png');
+    -fx-background-position: center;
+    -fx-background-size: cover;
+}

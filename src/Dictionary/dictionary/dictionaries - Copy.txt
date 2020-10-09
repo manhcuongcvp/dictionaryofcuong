@@ -1749,7 +1749,6 @@ man|con người; đàn ông
 manage|quản lý, trông nom, điều khiển
 management|sựquảnlý,sựtrôngnom,sự điều khiển
 manager|người quản lý, giám đốc
-manhcuong|Big Boss
 manner|cách, lối, kiểu; dáng, vẻ, thái độ
 manufacture|sản xuất, chế tạo
 manufacturer|người chế tạo, người sản xuất
@@ -1768,7 +1767,7 @@ massive|to lớn, đồ sộ
 master|chủ, chủ nhân, thầy giáo, thạc sĩ
 match|trận thi đấu, đối thủ, địch thủ; đối chọi, sánh được
 matching|tính địch thù, thi đấu
-mate|bạn, bạn bè
+mate|bạn, bạn nghề; giao phối
 material|nguyênvậtliệu;vậtchất, hữuhình
 mathematics, also maths|toán học, môn toán
 matter|chất, vật chất; có ý nghĩa, có tính chất quan trọng
@@ -2585,7 +2584,6 @@ sense|giác quan, tri giác, cảm giác
 sensible|có óc xét đoán; hiểu, nhận biết được
 sensitive|dễ bị thương, dễ bị hỏng; dễ bị xúc phạm
 sentence|câu
-sentimental|đa cảm
 separate|khác nhau, riêng biệt; làm rời, tác ra, chia tay
 separated|ly thân
 separately|không cùng nhau, thành người riêng, vật riêng

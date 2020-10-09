@@ -1366,7 +1366,7 @@ heavy|nặng, nặng nề
 heel|gót chân
 height|chiều cao, độ cao; đỉnh, điểm cao
 hell|địa ngục
-hello|chào, xin chào; lời chào
+hello|lời chào, chào, xin chào
 help|giúp đỡ; sự giúp đỡ
 helpful|có ích; giúp đỡ
 hence|sauđây,kểtừ đây;do đó,vìthế
@@ -1749,7 +1749,6 @@ man|con người; đàn ông
 manage|quản lý, trông nom, điều khiển
 management|sựquảnlý,sựtrôngnom,sự điều khiển
 manager|người quản lý, giám đốc
-manhcuong|Big Boss
 manner|cách, lối, kiểu; dáng, vẻ, thái độ
 manufacture|sản xuất, chế tạo
 manufacturer|người chế tạo, người sản xuất
@@ -2585,7 +2584,6 @@ sense|giác quan, tri giác, cảm giác
 sensible|có óc xét đoán; hiểu, nhận biết được
 sensitive|dễ bị thương, dễ bị hỏng; dễ bị xúc phạm
 sentence|câu
-sentimental|đa cảm
 separate|khác nhau, riêng biệt; làm rời, tác ra, chia tay
 separated|ly thân
 separately|không cùng nhau, thành người riêng, vật riêng
