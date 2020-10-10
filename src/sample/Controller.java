@@ -1,6 +1,7 @@
 package sample;
 
 import Dictionary.*;
+import ggTranslate.*;
 
 import com.sun.speech.freetts.Voice;
 import com.sun.speech.freetts.VoiceManager;
@@ -32,6 +33,8 @@ import javax.speech.EngineException;
 import javax.speech.synthesis.Synthesizer;
 import javax.speech.synthesis.SynthesizerModeDesc;
 
+//import static sample.Main.wordsRecently;
+
 public class Controller extends Application implements Initializable {
     @FXML
     private TextField WordTarget;
@@ -40,7 +43,7 @@ public class Controller extends Application implements Initializable {
     @FXML
     private TextArea SearcherZone;
     @FXML
-    private Button addButton, deleteButton, modifyButton, voiceButton;
+    private Button addButton, deleteButton, modifyButton, voiceButton, searchWithGoogle;
 
     private ControllerAdd controllerAdd = new ControllerAdd();
     private ControllerRemove controllerRemove = new ControllerRemove();
@@ -110,12 +113,35 @@ public class Controller extends Application implements Initializable {
         if (voice != null) {
             voice.allocate();
         } try {
-            voice.setRate(190);
-            voice.setPitch(150);
-            voice.setVolume(3);
+            //voice.setRate(190);
+            //voice.setPitch(150);
+            //voice.setVolume(3);
             voice.speak(WordTarget.getText());
         } catch (Exception e1) {
                 e1.printStackTrace();
+        }
+    }
+
+    /**
+     * ggTranslate
+     *
+     * @author  Manh Cuong
+     * @version 1.0
+     * @since   2020-10-10
+     */
+    private Translator translator = new Translator();
+    public void searchWithGGTranslate() throws Exception {
+        try {
+            String wordTarget = WordTarget.getText().toLowerCase();
+            String wordExplain = translator.callUrlAndParseResult("en", "vi", wordTarget);
+            LookUpZone.setText(wordExplain + "\n");
+        } catch (IOException e) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Cảnh báo");
+            alert.setHeaderText(null);
+            alert.setContentText("Vui lòng kiểm tra kết nối Internet!");
+            alert.showAndWait();
+            return;
         }
     }
 

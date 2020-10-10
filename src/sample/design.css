@@ -31,3 +31,11 @@
     -fx-background-position: center;
     -fx-background-size: cover;
 }
+#searchWithGoogle {
+    -fx-border-radius: 100%;
+    -fx-background-radius: 100%;
+    -fx-background-image:url('./Image/SearchGoogleIcon.png');
+    -fx-background-position: center;
+    -fx-background-size: cover;
+}
+
